@@ -1,9 +1,5 @@
-# HOJE EM DIA ESSE BIXARAL TEM TUDO DE MÃO BEIJADA
+# Estatísticas
 
-Esse código não é nada mais nada menos do que o sangue do iteano. A alma velha e rodada daquele que se suga parnasianamente e nem pode.
+Análise estatística do resultado do vestibular do ITA 2020.
 
-Isso ou uma análise estatística do resultado dos vestibulares. Vocês escolhem.
-
-Motiva, bixaral, um dia acaba.
-
-Hipster, T23
+Autoria original: Hipster, T23
