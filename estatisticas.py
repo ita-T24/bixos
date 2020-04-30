@@ -1,10 +1,12 @@
+#----AVISO----#
+#Este código foi deixado como legacy code, é apenas temporário.
+#A meta é excluir todo esse código.
 ################################################################
 #                                                              #
 # Coisas legais a se fazer:                                    #
 # - Adicionar BeautifulSoup pra pegar os dados direto do site  #
 # - Solucionar a gambiarra dos Bar Plots                       #
 ################################################################
-
 
 from matplotlib import pyplot as plt
 from matplotlib import colors
@@ -20,7 +22,7 @@ import requests
 VERBOSE = True # Se não quiser nada printando no console só seta pra False
 
 ###### DIRETORIO DE ENTRADA #######
-diretorio_entrada = "bixos_raw"
+diretorio_entrada = "coleguinhas_raw"
 ####################################
 
 
@@ -148,7 +150,6 @@ for bixo in bixos:
         contagem.append(1)
 #######################################################################
 
-print(cidades)
 
 ############# HISTOGRAMAS DA DISTRIBUIÇÃO DE NOTAS ###############
 hist_plot(notas[0], titlename="Distribuicao de notas de MAT")

@@ -1,0 +1,12 @@
+.grid-container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  border: 1px solid black;
+  justify-items: center;
+}
+.pie-chart-container {
+  margin: auto;
+  display: grid;
+  justify-items: center;
+}
