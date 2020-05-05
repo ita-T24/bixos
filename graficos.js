@@ -1,9 +1,38 @@
 //TODO: Modularizar o código
+async function getData() {
+  const response = await fetch("coleguinhas_raw");
+  const text = await response.text();
+  const regex = /([A-Z][A-Z ]+[A-Z])[ \|]+([\d,]+\d)[ \|]+([\d,]+\d)[ \|]+([\d,]+\d)[ \|]+([\d,]+\d)[ \|]+([\d,]+\d)[ \|]+([\d,]+\d)[ \|]+([\d]+\d)[ \|]+([A-Z][A-Z ]+[A-Z])/g;
+  if (regex.test(text)) {
+    let matches_iter = text.matchAll(regex);
+    let matches = Array.from(matches_iter);
+    let coleguinhas = [];
+    for(let i=0; i < matches.length; i++) {
+      let m = matches[i];
+      let coleguinha = {
+        "Nome": m[1],
+        "Média primeira fase": parseFloat(m[2]),
+        "MAT": parseFloat(m[3]),
+        "FIS": parseFloat(m[4]),
+        "QUIM": parseFloat(m[5]),
+        "RED": parseFloat(m[6]),
+        "Média final": parseFloat(m[7]),
+        "Classificação": parseInt(m[8]),
+        "Cidade": m[9]
+      };
+      coleguinhas.push(coleguinha);
+    }
+    return coleguinhas;
+  }
+  else {
+      console.error("No matches found!");
+      return null;
+    }
+}
+
 async function plotData() {
   //Receber os dados
-  const response = await fetch("dados.json");
-  const dados = await response.json();
-  console.debug(dados);
+  const dados = await getData();
   let identificadores = ["Média primeira fase", "MAT", "FIS", "QUIM", "RED", "Média final"];
   let notas = {};
   for(let id of identificadores) {
